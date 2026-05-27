@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мой тестовый проект</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        transition: background-color 0.4s ease;
+      }
+      .card {
+        text-align: center;
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        max-width: 400px;
+        width: 100%;
+      }
+      h1 {
+        color: #4a90e2;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #666;
+        margin-bottom: 24px;
+      }
+      button {
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.1s;
+      }
+      button:hover {
+        background-color: #357ae8;
+      }
+      button:active {
+        transform: scale(0.95);
+      }
+      .counter {
+        font-size: 20px;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Привет!</h1>
+      <p>Это тестовый проект, запущенный на GitHub Pages.</p>
+      <button id="actionBtn">Нажми меня</button>
+      <div class="counter">Кликов: <span id="clickCount">0</span></div>
+    </div>
+
+    <script>
+      const button = document.getElementById("actionBtn");
+      const counter = document.getElementById("clickCount");
+      let count = 0;
+
+      // Список мягких пастельных цветов для смены фона
+      const colors = [
+        "#f0f2f5",
+        "#e3faf2",
+        "#fff0f5",
+        "#f0f5ff",
+        "#fffaf0",
+        "#f5f0ff",
+      ];
+
+      button.addEventListener("click", () => {
+        count++;
+        counter.textContent = count;
+
+        // Меняем цвет фона случайным образом
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+      });
+    </script>
+  </body>
+</html>
